@@ -10,5 +10,7 @@ public class Weekdays {
         for (Weekday weekday : weekdays) {
             System.out.println(weekday + " is weekend: " + weekday.isWeekend());
         }
+
+
     }
 }
