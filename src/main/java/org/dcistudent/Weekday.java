@@ -9,13 +9,13 @@ public enum Weekday {
     SATURDAY(true),
     SUNDAY(true);
 
-    private final Boolean isWeekend;
+    private final Boolean weekend;
 
     Weekday(Boolean isWeekend) {
-        this.isWeekend = isWeekend;
+        this.weekend = isWeekend;
     }
 
-    public Boolean isWeek() {
-        return isWeekend;
+    public Boolean isWeekend() {
+        return weekend;
     }
 }

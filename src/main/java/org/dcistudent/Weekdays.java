@@ -8,7 +8,7 @@ public class Weekdays {
     public Weekdays() {
         Weekday[] weekdays = Weekday.values();
         for (Weekday weekday : weekdays) {
-            System.out.println(weekday + " is weekend: " + weekday.isWeek());
+            System.out.println(weekday + " is weekend: " + weekday.isWeekend());
         }
     }
 }
