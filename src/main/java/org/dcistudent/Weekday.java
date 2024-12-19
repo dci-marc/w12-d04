@@ -15,7 +15,7 @@ public enum Weekday {
         this.isWeekend = isWeekend;
     }
 
-    public Boolean getWeekend() {
+    public Boolean isWeek() {
         return isWeekend;
     }
 }
