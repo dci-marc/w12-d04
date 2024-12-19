@@ -2,6 +2,8 @@ package org.dcistudent;
 
 import lombok.NonNull;
 
+import java.util.Arrays;
+
 @NonNull
 public record Student(String name, Integer grade, String gradeLetter, String course, String country) {
     private static final String TEACHER = "Omar";
@@ -13,8 +15,12 @@ public record Student(String name, Integer grade, String gradeLetter, String cou
         if (grade < 0 || grade > 100) {
             throw new IllegalArgumentException("Grade must be between 0 and 100");
         }
-        if (gradeLetter.isBlank()) {
-            throw new IllegalArgumentException("Grade letter cannot be blank");
+        try {
+            StudentGrades.valueOf(gradeLetter);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(
+                    "Grade letter must be " + String.join(",", Arrays.toString(StudentGrades.values())) + "."
+            );
         }
         if (course.isBlank()) {
             throw new IllegalArgumentException("Course cannot be blank");
